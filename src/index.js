@@ -10,6 +10,8 @@ dotenv.config({
 connectDB();
 
 /*
+import mongoose from "mongoose";
+import  {DB_Name}  from "./constants.js";
 import express from "express";
 
 const app = express();
@@ -18,7 +20,7 @@ const app = express();
   try {
     await mongoose.connect(`${process.env.MONGODB_URI}/{DB_Name}`);
     console.log("Connected to MongoDB");
-    app.on(error, () => {
+    app.on(error, (error) => {
       console.log("Error connecting to MongoDB", error);
       throw error;
     });
